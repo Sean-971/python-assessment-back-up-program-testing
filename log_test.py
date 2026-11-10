@@ -7,7 +7,6 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
-
 # Write log messages
 logging.info("This message is appended to the log file.")
 logging.error("An error occurred during execution.")

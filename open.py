@@ -19,6 +19,7 @@ def create_backup(source_path, destination_dir):
     #used to ensure the source path is correct
     if not os.path.exists(source_path):
         print(f"Error: ",{source_path}," does not exist.")
+        logging.error(f'FAIL: {source_path} located within the Config file but no such file exists.')
         return
     os.makedirs(destination_dir, exist_ok=True)
     now = datetime.now(ZoneInfo("Australia/Melbourne"))
@@ -31,6 +32,7 @@ def create_backup(source_path, destination_dir):
 
         shutil.copytree(source_path, target_path)
         print(f"Successfully backed up to: ",{target_path})
+        logging.info(f'SUCCESS: backup completed successfully.')
         
     elif os.path.isfile(source_path):
         file_name, file_ext =os.path.splitext(base_name)  
@@ -39,7 +41,7 @@ def create_backup(source_path, destination_dir):
 
         shutil.copy2(source_path, target_path)
         print(f'Successfully backed up file to: ',{target_path})
-        logging.info("File backup completed successfully.")
+        logging.info("SUCCESS:  backup completed successfully.")
         print("Check backup.log for details.")
 
 def main():
@@ -64,6 +66,6 @@ def main():
             create_backup(target_file, Destination)            
         else:
             print('Error: '+ target_file + ' not included within the Config File. Ensure command line has full file name. Make sure to Type the full file name including its extension (.txt, .py)')
-            logging.error("Backup failed, "+ target_file+ " not in the config file. Ensure command is written correctly and that the job is valid")     
+            logging.error("FAIL: Backup failed, "+ target_file+ " not in the config file. Ensure command is written correctly and that the job is valid")     
 if __name__ == "__main__":
     main()
