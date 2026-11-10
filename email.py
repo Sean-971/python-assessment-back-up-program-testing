@@ -14,7 +14,7 @@ smtp = {"sender": "seanythelad@gmail.com",    # elasticemail.com verified sender
         "server": "smtp.elasticemail.com",      # elasticemail.com SMTP server
         "port": 2525,                           # elasticemail.com SMTP port
         "user": "seanythelad@gmail.com",      # elasticemail.com user
-        "password": "AAAABBBBXXXXYYYYZZZZ"}     # elasticemail.com password
+        "password": "77DFABCE56C81A3E5E0A9A87F3168888F2A6"}     # elasticemail.com password
 
 # append all error messages to email and send
 def sendEmail(message):

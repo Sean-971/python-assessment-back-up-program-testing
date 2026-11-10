@@ -11,3 +11,10 @@
 2026-11-10 22:37:44 - ERROR - FAIL: job1 located within the Config file but no such file exists.
 2026-11-10 22:37:55 - ERROR - FAIL: Backup failed, job2 not in the config file. Ensure command is written correctly and that the job is valid
 2026-11-10 22:38:01 - INFO - SUCCESS:  backup completed successfully.
+2026-11-10 22:53:16,285 - INFO - This message is appended to the log file.
+2026-11-10 22:53:16,285 - ERROR - An error occurred during execution.
+2026-11-10 23:15:47,374 - INFO - This message is appended to the log file.
+2026-11-10 23:22:46,409 - INFO - This message is appended to the log file.
+2026-11-10 23:26:17,790 - INFO - This message is appended to the log file.
+2026-11-10 23:26:50,830 - INFO - This message is appended to the log file.
+2026-11-10 23:26:50,830 - ERROR - An error occurred during execution. Error: 
