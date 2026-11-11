@@ -18,3 +18,13 @@
 2026-11-10 23:26:17,790 - INFO - This message is appended to the log file.
 2026-11-10 23:26:50,830 - INFO - This message is appended to the log file.
 2026-11-10 23:26:50,830 - ERROR - An error occurred during execution. Error: 
+2026-11-11 00:12:06 - INFO - SUCCESS:  backup completed successfully.
+2026-11-11 00:46:06 - ERROR - FAIL: job3 located within the Config file but no such file exists.
+2026-11-11 01:38:07 - ERROR - FAIL: /workspaces/python-assessment-back-up-program/job1 located within the Config file but no such file exists.
+2026-11-11 01:38:17 - ERROR - FAIL: Backup failed, job2 not in the config file. Ensure command is written correctly and that the job is valid
+2026-11-11 01:39:21 - ERROR - FAIL: /workspaces/python-assessment-back-up-program/job2 located within the Config file but no such file exists.
+2026-11-11 01:39:30 - ERROR - FAIL: /workspaces/python-assessment-back-up-program/job3 located within the Config file but no such file exists.
+2026-11-11 01:40:33 - ERROR - FAIL: /workspaces/python-assessment-back-up-program/job3 located within the Config file but no such file exists.
+2026-11-11 01:41:50 - ERROR - FAIL: /jobjob3 located within the Config file but no such file exists.
+2026-11-11 01:42:18 - ERROR - FAIL: /jobs/job3 located within the Config file but no such file exists.
+2026-11-11 01:43:32 - ERROR - FAIL: /workspaces/python-assessment-back-up-program/job3 located within the Config file but no such file exists.

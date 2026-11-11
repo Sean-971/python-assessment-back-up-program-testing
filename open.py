@@ -8,7 +8,13 @@
 import shutil, os, sys, datetime, logging
 from datetime import datetime
 from zoneinfo import ZoneInfo
-
+logging.basicConfig(
+    filename='backup.log',
+    filemode='a',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+        )
 
 
 def create_backup(source_path, destination_dir):
@@ -45,27 +51,30 @@ def create_backup(source_path, destination_dir):
         print("Check backup.log for details.")
 
 def main():
-    logging.basicConfig(
-    filename='backup.log',
-    filemode='a',
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-        )
+    target_variable = "api_key"
+    variable_value = None
+
+# Open the file safely using a 'with' statement (automatically closes the file)
+
     if len(sys.argv) < 2:
-        print("Error: Please provide a filename.")
-        print("Usage: python script.py <filename>")
-        sys.exit(1)
+            print("Error: Please provide a filename.")
+            print("Usage: python script.py <filename>")
+            sys.exit(1)
     target_file = sys.argv[1]
     print('Searching for: '+ target_file)
     Search_word = target_file
+    import backupcfg
+    
     with open("backupcfg.py", "r") as file:
         if Search_word in file.read():
             print(target_file + ' included within the Config File. Proceeding to backup.')
+            target_file = os.path.abspath( target_file)
             Destination = "./backups"
+             
             create_backup(target_file, Destination)            
         else:
             print('Error: '+ target_file + ' not included within the Config File. Ensure command line has full file name. Make sure to Type the full file name including its extension (.txt, .py)')
-            logging.error("FAIL: Backup failed, "+ target_file+ " not in the config file. Ensure command is written correctly and that the job is valid")     
+            logging.error("FAIL: Backup failed, "+ target_file+ " not in the config file. Ensure command is written correctly and that the job is valid")   
+
 if __name__ == "__main__":
     main()
